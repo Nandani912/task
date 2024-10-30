@@ -1,0 +1,8 @@
+<h1>Tasks</h1>
+<ul>
+<% @tasks.each do|task| %>
+  <li><%= link_to task.title,task %></li>
+  <%end%>
+</ul>
+<%= link_to "New Task", new_task_path %>
+<%= button_to 'Log Out', logout_path, method: :delete, form: { class: 'logout-form' } %>

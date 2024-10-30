@@ -1,0 +1,27 @@
+
+<div class="form-container">
+  <h1>Sign Up</h1>
+  <div class="form-box">
+    <%= form_with(model: @user, url: signup_path, local: false) do |f| %>
+      <div class="form-group">
+        <%= f.label :username %><br/>
+        <%= f.text_field :username, class: "form-control" %>
+      <div class="form-group">
+        <%= f.label :email %><br/>
+        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password %><br/>
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Sign Up", class: "btn btn-primary" %>
+      </div>
+      <div class="already-user">
+      <p>Already a user? <%= link_to 'Login here', login_path %></p>
+    </div>
+    <% end %>
+  </div>
+</div>
+ 
+ 
