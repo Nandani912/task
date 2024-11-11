@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   
   def index
-    @tasks = Task.all
+    @tasks = Task.where(user_id: session[:user_id])
   end
   def show
     @task = Task.find(params[:id])
@@ -10,7 +10,7 @@ class TasksController < ApplicationController
     @task = Task.new
   end
   def create
-    @task = Task.new(task_params)
+    @task = Task.where(user_id: session[:user_id]).new(task_params)
     if @task.save
       redirect_to tasks_path
       else
@@ -39,7 +39,6 @@ end
 private
 def task_params
   params.require(:task).permit(:title, :description, :status)
- 
- 
+
 end
 end

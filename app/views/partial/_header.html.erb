@@ -1,0 +1,14 @@
+<nav class="navbar">
+    <div class="navbar-left">
+      <h1 class="navbar-title">Task Management</h1>
+    </div>
+
+      <div class="navbar-right"> 
+      <% if session[:user_id] %>
+      <% @user= User.find_by(id: session[:user_id])%>
+           <p class="welcome-message">Welcome, <%= @user.email %> </p>
+       <%= button_to 'Log Out', "/logout", method: :delete, form: { class: 'logout-form' } %>
+             <%=button_to "home","/tasks",method: :get %>
+         </div>
+    <% end %>
+  </nav>

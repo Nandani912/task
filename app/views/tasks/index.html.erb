@@ -1,8 +1,13 @@
-<h1>Tasks</h1>
+<header><%= render partial: 'partial/header'%></header>
+<div class="container">
+<% if @tasks.any? %>
 <ul>
-<% @tasks.each do|task| %>
+
+<% @tasks.each do |task| %>
   <li><%= link_to task.title,task %></li>
+  <%end%>
   <%end%>
 </ul>
 <%= link_to "New Task", new_task_path %>
-<%= button_to 'Log Out', logout_path, method: :delete, form: { class: 'logout-form' } %>
+
+</div>

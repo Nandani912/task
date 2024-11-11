@@ -13,6 +13,9 @@
       <div class="form-group">
         <%= f.submit "Log In", class: "btn btn-primary" %>
       </div>
+      <div class="already-user">
+      <p>New user? <%= link_to 'sign up here', signup_path %></p>
+    </div>
     <% end %>
   </div>
 

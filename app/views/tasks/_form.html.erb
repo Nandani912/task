@@ -1,10 +1,10 @@
 <%= form_with model: task do |form| %>
-  <div>
+  <div class="field">
     <%= form.label :title %><br>
     <%= form.text_field :title %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :description %><br>
     <%= form.text_area :description %><br>
   </div>
@@ -12,7 +12,7 @@
   <%= form.label :status %><br>
   <%= form.text_area :status %><br>
 </div>
-  <div>
+  <div class="field">
     <%= form.submit %>
   </div>
 <% end %>
